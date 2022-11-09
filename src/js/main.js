@@ -8,10 +8,10 @@ fetch("http://omdbapi.com?apikey=416ed51a&s=star")
     //skapar ett objekt i min klass omdbResponse. data.totalResults motsvarar amount och data.Search motsvarar movies. lagrar i variabeln result så jag kan komma åt dessa enkelt
     console.log(result);
 
-    handleData(result.movies); //skickar med movies från min klass.
+    handleData(result.movies, result.amount); //skickar med movies från min klass.
   });
 
-function handleData(movies) { //tar emot result.movies som movies
+function handleData(movies, amount) { //tar emot result.movies som movies
   for (let i = 0; i < movies.lenght; i++) {
     let container = document.createElement("div");
     let title = document.createElement("h3");
@@ -21,5 +21,6 @@ function handleData(movies) { //tar emot result.movies som movies
   }
 
   console.log(movies);
+  console.log(amount);
 
 }
